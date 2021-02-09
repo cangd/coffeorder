@@ -31,4 +31,5 @@
   <button class="waves-effect waves-light btn col s12" (click)="onSubmit()">
     Submit
   </button>
+  <p *ngIf="ordersService.requestSent">Order has been sent</p>
 </form>

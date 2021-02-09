@@ -32,9 +32,16 @@ export class OrdersComponent implements OnInit {
     this.ordersService.form.value.coffeeOrder = this.coffeeOrder;
     let data = this.ordersService.form.value;
 
-    this.ordersService.createCoffeeOrder(data).then((res) => {
-      console.log('foo');
-    });
+    this.ordersService.createCoffeeOrder(data).then((res) => {});
+
+    setTimeout(() => {
+      this.coffeeOrder = [];
+      this.ordersService.requestSent = false;
+    }, 3000);
+  }
+
+  getCoffeeOrders() {
+    return;
   }
 
   ngOnInit(): void {}
